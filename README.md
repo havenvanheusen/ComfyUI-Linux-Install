@@ -1,7 +1,7 @@
 # ComfyUI-linux-Install
 A simple script to make installing ComfyUI on Linux easier. This fork is intended solely as an installation script. It will create a new script (start.sh) in the chosen directory to update and launch ComfyUI once you've installed it.
 
-**Note that this script uses relative paths. I had no reason to change that so I left it as is, but just a heads up in case your system configuration is unhappy with that.**
+**Note that this script uses relative paths. I had no reason to change that so I left it as is, but just a heads up if you're running the script from another working directory.**
 
 Step 1) download the **comfy-webui.sh** file to your home directory.
 
