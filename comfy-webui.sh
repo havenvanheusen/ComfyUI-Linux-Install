@@ -115,6 +115,11 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+# Install ComfyUI Manager
+if [ ! -d "./custom_nodes/ComfyUI-Manager" ]; then
+    git clone https://github.com/ltdrdata/ComfyUI-Manager.git ./custom_nodes/ComfyUI-Manager
+fi
+
 # Create new startup script
 if [ ! -f "start.sh" ]; then
     printf "\x23\x21/usr/bin/env bash\n\nsource ./venv/bin/activate\ngit pull\npython main.py --listen" >> start.sh
@@ -133,7 +138,7 @@ read -p "Launch ComfyUI now? [Y/N] " choice
       if [ "$choice" = "Y" ] || [ "$choice" = "y" ]; then
         echo "Launching ComfyUI..."
       else
-        echo "Exiting script. Start the ./start.sh script to start ComfyUI again."
+        echo "Exiting script. Launch the start.sh script in the new ComfyUI directory to start ComfyUI again."
         exit 1
       fi
 python main.py --listen
