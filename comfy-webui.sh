@@ -122,7 +122,7 @@ fi
 
 # Create new startup script
 if [ ! -f "start.sh" ]; then
-    printf "\x23\x21/usr/bin/env bash\n\nsource ./venv/bin/activate\ngit pull\npython main.py --listen" >> start.sh
+    printf "\x23\x21/usr/bin/env bash\n\nsource ./env/bin/activate\ngit pull\npython main.py --listen" >> start.sh
     chmod +x start.sh
 fi
 
