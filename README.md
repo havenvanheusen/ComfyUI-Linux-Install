@@ -1,5 +1,7 @@
-# SDXL-linux-Install
-A simple script to make installing ComfyUI node based AI in Linux easier.
+# ComfyUI-linux-Install
+A simple script to make installing ComfyUI on Linux easier. This fork is intended solely as an installation script. It will create a new script (start.sh) in the chosen directory to update and launch ComfyUI once you've installed it.
+
+**Note that this script uses relative paths. I had no reason to change that so I left it as is, but just a heads up in case your system configuration is unhappy with that.**
 
 Step 1) download the **comfy-webui.sh** file to your home directory.
 
@@ -11,28 +13,13 @@ Step 2) Open a terminal window and execute the next 2 commands.
 
 Step 3) Lastly, after the script finishes, Press _Ctrl-C_ to quit.
 
-Step 4) You will need to download 2 SDXL models and a SDXL VAE file.
+Step 4) Download models and place the files in the _ComfyUI/models/checkpoints_ or _ComfyUI/models/unet_ directories and VAE files in the _ComfyUI/models/vae_ directory as normal. These can be found in a variety of places like civitai.com, huggingface.co, etc.
 
-For the 2 SDXL models:
-
-https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0
-
-https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0
-
-And place the models into the _ComfyUI/models/checkpoints_ directory.
-
-Download the VAE file from here: 
-
-https://huggingface.co/stabilityai/sdxl-vae
-
-And place the file in the _ComfyUI/models/vae_ directory.
-
-Step 5) Any time you wish to start the server, in your home directory, simply start **./comfy-webui.sh**.
+Step 5) Any time you wish to start the server, in your home directory, simply start **./start.sh**.
 
 ComfyUI Github Repository: https://github.com/comfyanonymous/ComfyUI
 
-By using the **comfy-webui.sh** script to start the ComfyUI AI, your copy of ComfyUI will be automatically
+By using the **start.sh** script this creates to start the ComfyUI AI, your copy of ComfyUI will be automatically
 updated to the latest version of ComfyUI.
 
-Older non-SDXL models can still be used. Copy those models into the _ComfyUI/models/checkpoints_ directory.
-And the older VAEs as well, placing those into the _ComfyUI/models/vae_ directory.
+I wanted a script that would mostly automate the creation of a new ComfyUI instance in order to combat dependency conflicts by having instances depending on purpose (Image generation, inpainting, video generation, 3D mesh generation, background removal, etc.) and test new nodes/workflows/updates without breaking an existing installation.
